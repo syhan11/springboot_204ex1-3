@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:inline="text">
+        Car Name: [[${carvar.name}]].<br />
+        Type: [[${carvar.type}]].<br />
+        Description: [[${carvar.description}]]
+    </p>
+</body>
+</html>
