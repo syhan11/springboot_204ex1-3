@@ -11,15 +11,17 @@ import javax.validation.Valid;
 public class HomeController {
     @GetMapping("/carform")
     public String loadCarForm (Model model) {
-        model.addAttribute("carvar", new Car());
+        model.addAttribute("car", new Car());
         return "carform";
     }
 
     @PostMapping("/carform")
-    public String processCarForm (@Valid Car tempcarvar, BindingResult result, Model model) {
-        model.addAttribute("carvar", tempcarvar);
-        if (result.hasErrors())
+    public String processCarForm (@Valid Car car, BindingResult result, Model model) {
+
+        if (result.hasErrors()) {
+
             return "carform";
+        }
         return "carconfirm";
     }
 }
